@@ -249,8 +249,11 @@ void ex8_run(){
 const int MAX_LED_MATRIX = 8;
 int index_led_matrix = 0;
 uint8_t matrix_buffer[8] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08};
+int start;
+int i;
+int count;
 void updateLEDMatrix(int index){
-	switch (index){
+	switch (count){
 	case 0:
 		HAL_GPIO_WritePin ( ENM0_GPIO_Port , ENM0_Pin , GPIO_PIN_SET );
 		HAL_GPIO_WritePin ( ENM1_GPIO_Port , ENM1_Pin , GPIO_PIN_RESET );
@@ -352,18 +355,15 @@ void ex9_run(){
 	updateLEDMatrix(count_ex9);
 	count_ex9 = (count_ex9 + 1) % 8;
 }
-int start;
-int i;
-int count;
 void ex10_init(){
-	matrix_buffer[0] = 0x1E;
+	matrix_buffer[0] = 0x18;
 	matrix_buffer[1] = 0x24;
 	matrix_buffer[2] = 0x66;
 	matrix_buffer[3] = 0x99;
 	matrix_buffer[4] = 0x99;
 	matrix_buffer[5] = 0x66;
 	matrix_buffer[6] = 0x24;
-	matrix_buffer[7] = 0x1E;
+	matrix_buffer[7] = 0x18;
 	start = 0;
 	i = 0;
 	count = 0;
@@ -372,7 +372,10 @@ void ex10_run(){
 	updateLEDMatrix(i);
 	i++;
 	count++;
-	if(count > 7) start++;
-	if(start > 7) start = 0;
-	if(i > 7) i = start;
+	if(count > 7) {
+		count = 0;
+		start = (start + 1) % 8;
+		i = start;
+	}
+	if(i > 7) i = 0;
 }
