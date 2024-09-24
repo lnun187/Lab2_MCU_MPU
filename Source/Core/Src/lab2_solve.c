@@ -335,7 +335,6 @@ void updateLEDMatrix(int index){
 		break;
 	}
 	GPIOB->ODR &= 0x00FF;
-//	GPIOB->ODR |= (0xFF << 8);
 	GPIOB->ODR |= (matrix_buffer[index] << 8);
 }
 void ex9_init(){
@@ -347,12 +346,33 @@ void ex9_init(){
 	matrix_buffer[5] = 0x7F;
 	matrix_buffer[6] = 0x3F;
 	matrix_buffer[7] = 0x00;
-
 }
 int count_ex9 = 0;
 void ex9_run(){
 	updateLEDMatrix(count_ex9);
 	count_ex9 = (count_ex9 + 1) % 8;
 }
-void ex10_init();
-void ex10_run();
+int start;
+int i;
+int count;
+void ex10_init(){
+	matrix_buffer[0] = 0x1E;
+	matrix_buffer[1] = 0x24;
+	matrix_buffer[2] = 0x66;
+	matrix_buffer[3] = 0x99;
+	matrix_buffer[4] = 0x99;
+	matrix_buffer[5] = 0x66;
+	matrix_buffer[6] = 0x24;
+	matrix_buffer[7] = 0x1E;
+	start = 0;
+	i = 0;
+	count = 0;
+}
+void ex10_run(){
+	updateLEDMatrix(i);
+	i++;
+	count++;
+	if(count > 7) start++;
+	if(start > 7) start = 0;
+	if(i > 7) i = start;
+}

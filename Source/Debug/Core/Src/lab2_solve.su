@@ -11,5 +11,7 @@ lab2_solve.c:224:6:ex5_init	4	static
 lab2_solve.c:229:6:ex5_run	8	static
 lab2_solve.c:245:6:ex8_run	8	static
 lab2_solve.c:252:6:updateLEDMatrix	16	static
-lab2_solve.c:341:6:ex9_init	4	static
-lab2_solve.c:353:6:ex9_run	8	static
+lab2_solve.c:340:6:ex9_init	4	static
+lab2_solve.c:351:6:ex9_run	8	static
+lab2_solve.c:358:6:ex10_init	4	static
+lab2_solve.c:371:6:ex10_run	8	static
