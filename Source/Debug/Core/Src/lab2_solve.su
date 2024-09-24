@@ -1,3 +1,5 @@
 lab2_solve.c:9:6:display7SEG	16	static
 lab2_solve.c:106:6:ex1_init	8	static
 lab2_solve.c:112:6:ex1_run	8	static
+lab2_solve.c:120:6:ex2_init	8	static
+lab2_solve.c:128:6:ex2_run	8	static
