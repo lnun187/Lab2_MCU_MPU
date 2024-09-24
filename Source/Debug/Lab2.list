@@ -867,12 +867,13 @@ int main(void) {
  800075a:	d1e1      	bne.n	8000720 <main+0x28>
 			ex3_run();
  800075c:	f7ff ff66 	bl	800062c <ex3_run>
-			setTimer(3, 500);
- 8000760:	f44f 71fa 	mov.w	r1, #500	; 0x1f4
- 8000764:	2003      	movs	r0, #3
- 8000766:	f7ff ff79 	bl	800065c <setTimer>
+			setTimer(3, 250);
+ 8000760:	21fa      	movs	r1, #250	; 0xfa
+ 8000762:	2003      	movs	r0, #3
+ 8000764:	f7ff ff7a 	bl	800065c <setTimer>
 		if (timer_flag[0] == 1) {
- 800076a:	e7d9      	b.n	8000720 <main+0x28>
+ 8000768:	e7da      	b.n	8000720 <main+0x28>
+ 800076a:	bf00      	nop
  800076c:	200000a0 	.word	0x200000a0
  8000770:	40010800 	.word	0x40010800
  8000774:	20000074 	.word	0x20000074

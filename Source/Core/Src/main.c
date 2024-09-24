@@ -122,7 +122,7 @@ int main(void) {
 		}
 		if (timer_flag[3] == 1) {
 			ex3_run();
-			setTimer(3, 500);
+			setTimer(3, 250);
 		}
 		/* USER CODE END WHILE */
 
