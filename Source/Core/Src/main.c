@@ -106,6 +106,7 @@ int main(void) {
 	/* USER CODE BEGIN 2 */
 	HAL_TIM_Base_Start_IT(&htim2);
 	ex5_init();
+	ex9_init();
 	HAL_GPIO_WritePin( Blinky_LED_GPIO_Port, Blinky_LED_Pin, GPIO_PIN_SET);
 	/* USER CODE END 2 */
 
@@ -127,6 +128,10 @@ int main(void) {
 		if (timer_flag[8] == 1) {
 			ex8_run();
 			setTimer(8, 250);
+		}
+		if (timer_flag[9] == 1) {
+			ex9_run();
+			setTimer(9, 500);
 		}
 		/* USER CODE END WHILE */
 
