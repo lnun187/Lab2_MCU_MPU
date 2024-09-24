@@ -116,9 +116,13 @@ int main(void) {
 			HAL_GPIO_TogglePin( Blinky_LED_GPIO_Port, Blinky_LED_Pin);
 			setTimer(0, 1000);
 		}
+		if(timer_flag[1] == 1) {
+			HAL_GPIO_TogglePin ( DOT_GPIO_Port , DOT_Pin );
+			setTimer(1, 1000);
+		}
 		if (timer_flag[2] == 1) {
 			ex2_run();
-			setTimer(1, 500);
+			setTimer(2, 500);
 		}
 		/* USER CODE END WHILE */
 

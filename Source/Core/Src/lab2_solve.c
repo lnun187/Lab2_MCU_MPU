@@ -123,34 +123,47 @@ void ex2_init(){
 	HAL_GPIO_WritePin ( EN1_GPIO_Port , EN1_Pin , GPIO_PIN_SET );
 	HAL_GPIO_WritePin ( EN2_GPIO_Port , EN2_Pin , GPIO_PIN_SET );
 	HAL_GPIO_WritePin ( EN3_GPIO_Port , EN3_Pin , GPIO_PIN_SET );
-	display7SEG(3);
+	display7SEG(1);
 }
 void ex2_run(){
 	switch(state_ex2){
 		case 0:
 			display7SEG(1);
 			state_ex2 = 1;
+			HAL_GPIO_WritePin ( EN0_GPIO_Port , EN0_Pin , GPIO_PIN_RESET );
+			HAL_GPIO_WritePin ( EN1_GPIO_Port , EN1_Pin , GPIO_PIN_SET );
+			HAL_GPIO_WritePin ( EN2_GPIO_Port , EN2_Pin , GPIO_PIN_SET );
+			HAL_GPIO_WritePin ( EN3_GPIO_Port , EN3_Pin , GPIO_PIN_SET );
 			break;
 		case 1:
 			display7SEG(2);
 			state_ex2 = 2;
+			HAL_GPIO_WritePin ( EN0_GPIO_Port , EN0_Pin , GPIO_PIN_SET );
+			HAL_GPIO_WritePin ( EN1_GPIO_Port , EN1_Pin , GPIO_PIN_RESET );
+			HAL_GPIO_WritePin ( EN2_GPIO_Port , EN2_Pin , GPIO_PIN_SET );
+			HAL_GPIO_WritePin ( EN3_GPIO_Port , EN3_Pin , GPIO_PIN_SET );
+			break;
+		case 2:
+			display7SEG(3);
+			state_ex2 = 3;
+			HAL_GPIO_WritePin ( EN0_GPIO_Port , EN0_Pin , GPIO_PIN_SET );
+			HAL_GPIO_WritePin ( EN1_GPIO_Port , EN1_Pin , GPIO_PIN_SET );
+			HAL_GPIO_WritePin ( EN2_GPIO_Port , EN2_Pin , GPIO_PIN_RESET );
+			HAL_GPIO_WritePin ( EN3_GPIO_Port , EN3_Pin , GPIO_PIN_SET );
 			break;
 		case 3:
-			display7SEG(3);
-			state_ex2 = 4;
-			break;
-		case 4:
 			display7SEG(0);
 			state_ex2 = 0;
+			HAL_GPIO_WritePin ( EN0_GPIO_Port , EN0_Pin , GPIO_PIN_SET );
+			HAL_GPIO_WritePin ( EN1_GPIO_Port , EN1_Pin , GPIO_PIN_SET );
+			HAL_GPIO_WritePin ( EN2_GPIO_Port , EN2_Pin , GPIO_PIN_SET );
+			HAL_GPIO_WritePin ( EN3_GPIO_Port , EN3_Pin , GPIO_PIN_RESET );
 			break;
 		default:
 			state_ex2 = 0;
 			break;
 	}
-	HAL_GPIO_TogglePin ( EN0_GPIO_Port , EN0_Pin );
-	HAL_GPIO_TogglePin ( EN1_GPIO_Port , EN1_Pin );
-	HAL_GPIO_TogglePin ( EN2_GPIO_Port , EN2_Pin );
-	HAL_GPIO_TogglePin ( EN3_GPIO_Port , EN3_Pin );
+
 }
 void ex3_init();
 void ex3_run();
