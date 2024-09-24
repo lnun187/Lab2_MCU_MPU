@@ -22,7 +22,8 @@ Core/Src/lab2_solve.o: ../Core/Src/lab2_solve.c ../Core/Inc/lab2_solve.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+ ../Core/Inc/lab2_solve.h
 
 ../Core/Inc/lab2_solve.h:
 
@@ -75,3 +76,5 @@ Core/Src/lab2_solve.o: ../Core/Src/lab2_solve.c ../Core/Inc/lab2_solve.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
+
+../Core/Inc/lab2_solve.h:

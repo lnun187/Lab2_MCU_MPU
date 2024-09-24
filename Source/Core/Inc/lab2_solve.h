@@ -10,6 +10,7 @@
 #ifndef INC_LAB2_SOLVE_H_
 #define INC_LAB2_SOLVE_H_
 
+void display7SEG(int num);
 void ex1_init();
 void ex1_run();
 void ex2_init();

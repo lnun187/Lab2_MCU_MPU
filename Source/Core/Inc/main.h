@@ -32,6 +32,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "lab2_solve.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
