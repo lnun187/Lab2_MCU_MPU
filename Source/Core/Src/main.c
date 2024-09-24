@@ -105,7 +105,7 @@ int main(void) {
 	MX_GPIO_Init();
 	/* USER CODE BEGIN 2 */
 	HAL_TIM_Base_Start_IT(&htim2);
-	ex2_init();
+	ex3_init();
 	HAL_GPIO_WritePin( Blinky_LED_GPIO_Port, Blinky_LED_Pin, GPIO_PIN_SET);
 	/* USER CODE END 2 */
 
@@ -120,9 +120,9 @@ int main(void) {
 			HAL_GPIO_TogglePin ( DOT_GPIO_Port , DOT_Pin );
 			setTimer(1, 1000);
 		}
-		if (timer_flag[2] == 1) {
-			ex2_run();
-			setTimer(2, 500);
+		if (timer_flag[3] == 1) {
+			ex3_run();
+			setTimer(3, 500);
 		}
 		/* USER CODE END WHILE */
 
