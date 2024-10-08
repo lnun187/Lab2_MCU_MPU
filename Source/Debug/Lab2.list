@@ -947,8 +947,8 @@ int main(void) {
  8000740:	d1d6      	bne.n	80006f0 <main+0x2c>
 			ex10_run();
  8000742:	f7ff ff39 	bl	80005b8 <ex10_run>
-			setTimer(10, 100);
- 8000746:	2164      	movs	r1, #100	; 0x64
+			setTimer(10, 250);
+ 8000746:	21fa      	movs	r1, #250	; 0xfa
  8000748:	200a      	movs	r0, #10
  800074a:	f7ff ff6d 	bl	8000628 <setTimer>
 		if (timer_flag[0] == 1) {
