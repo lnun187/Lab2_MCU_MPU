@@ -127,7 +127,7 @@ int main(void) {
 		}
 		if (timer_flag[10] == 1) {
 			ex10_run();
-			setTimer(10, 500);
+			setTimer(10, 100);
 		}
 		/* USER CODE END WHILE */
 

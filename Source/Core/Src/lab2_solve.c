@@ -365,17 +365,17 @@ void ex10_init(){
 	matrix_buffer[6] = 0x24;
 	matrix_buffer[7] = 0x18;
 	start = 0;
-	i = 0;
-	count = 0;
+	i = 7;
+	count = 7;
 }
 void ex10_run(){
 	updateLEDMatrix(i);
-	i++;
-	count++;
-	if(count > 7) {
-		count = 0;
-		start = (start + 1) % 8;
+	i--;
+	count--;
+	if(count < 0) {
+		count = 7;
 		i = start;
+		start = (start + 1) % 8;
 	}
-	if(i > 7) i = 0;
+	if(i < 0) i = 7;
 }
